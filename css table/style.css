@@ -1,0 +1,43 @@
+table{
+    border-collapse: collapse; 
+    width:100%;
+    height:50%;
+    text-align:center;
+}
+.A{
+    background-color:red;
+    color: white;
+    font-size: 20px;
+}
+.L{
+    background-color: yellow;
+    color: brown;
+}
+.D{
+    background-color: blue;
+    color: white;
+}
+.M{
+    background-color: brown;
+    color: white;
+}
+.T{
+    background-color: green;
+    color: white;
+}
+.W{
+    background-color: aqua;
+    color:black;
+}
+.H{
+    background-color: yellowgreen;
+    color:grey;
+}
+.F{
+    background-color: blueviolet;
+    color: white;
+}
+.S{
+    background-color: orange;
+    color: black;
+}
