@@ -16,6 +16,10 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><button
+                            onclick="openModal('loginModal')">Login</button></li>
+                    <li><button
+                            onclick="openModal('registerModal')">Register</button></li>
                 </ul>
             </nav>
 
@@ -39,6 +43,32 @@
             <div class="card" id="contact">
                 <h2>Contact</h2>
                 <p>Email: your.jeetu@gmail.com</p>
+            </div>
+        </div>
+
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close"
+                    onclick="closeModal('loginModal')">&times;</span>
+                <h2>Login</h2>
+                <input type="text" placeholder="Username" id="login-username">
+                <input type="password" placeholder="Password"
+                    id="login-password">
+                <button onclick="login()">Login</button>
+            </div>
+        </div>
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+                <span class="close"
+                    onclick="closeModal('registerModal')">&times;</span>
+                <h2>Register</h2>
+                <input type="text" placeholder="Username"
+                    id="register-username">
+                <input type="email" placeholder="Email" id="register-email">
+                <input type="password" placeholder="Password"
+                    id="register-password">
+                <button onclick="register()">Register</button>
             </div>
         </div>
 
@@ -79,6 +109,12 @@
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="payment-container">
+            <h2>Support My Work</h2>
+            <button id="payButton">Make a Payment</button>
         </div>
 
         <!-- <footer>
@@ -128,6 +164,45 @@
                         cards[i].style.display = "none";
                     }
                 }
+            }
+
+
+
+            document.getElementById("payButton").addEventListener("click", function () {
+                var options = {
+                    "key": "YOUR_RAZORPAY_KEY", 
+                    "amount": "50000", 
+                    "currency": "INR",
+                    "name": "Your Name",
+                    "description": "Support My Work",
+                    "handler": function (response) {
+                        alert("Payment Successful: " + response.razorpay_payment_id);
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+            });
+
+
+            function openModal(id) {
+                document.getElementById(id).style.display = "block";
+            }
+
+            function closeModal(id) {
+                document.getElementById(id).style.display = "none";
+            }
+
+            function login() {
+                alert("Login functionality to be implemented");
+                closeModal('loginModal');
+            }
+
+            function register() {
+                alert("Registration functionality to be implemented");
+                closeModal('registerModal');
             }
             </script>
 
