@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+}
+body {
+    background-color: #ccc;
+}
+.container {
+max-width: 900px;
+margin: 0 auto;
+}
+.apply_box {
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+}
